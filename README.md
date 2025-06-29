@@ -10,7 +10,7 @@ A modern web application that showcases space-related data from NASA's Open APIs
 
 **🚀 Deployed Application:** [NASA Explorer Live](https://nasa-explorer-app.vercel.app)
 
-**📂 GitHub Repository:** [NASA Explorer Source Code](https://github.com/timmy15/nasa-explorer)
+**📂 GitHub Repository:** [NASA Explorer Source Code](https://github.com/Timmy15/nasa-explorer)
 
 ## ✨ Features
 
@@ -86,7 +86,7 @@ nasa-explorer/
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/timmy15/nasa-explorer.git
+   git clone https://github.com/Timmy15/nasa-explorer.git
    cd nasa-explorer
    ```
 
@@ -219,11 +219,11 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📞 Support
 
 If you encounter any issues or have questions:
-1. Check the [Issues](https://github.com/timmy15/nasa-explorer/issues) page
+1. Check the [Issues](https://github.com/Timmy15/nasa-explorer/issues) page
 2. Create a new issue with detailed information
 
 ## 🔗 Links
 
 - **Live Application:** [https://nasa-explorer-app.vercel.app](https://nasa-explorer-app.vercel.app)
-- **GitHub Repository:** [https://github.com/timmy15/nasa-explorer](https://github.com/timmy15/nasa-explorer)
+- **GitHub Repository:** [https://github.com/Timmy15/nasa-explorer](https://github.com/Timmy15/nasa-explorer)
 - **NASA APIs:** [https://api.nasa.gov/](https://api.nasa.gov/) 
