@@ -1,0 +1,360 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;700;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-space-black text-white font-sans;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    background-image: 
+      radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.2) 0%, transparent 50%);
+    background-attachment: fixed;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .font-space {
+    font-family: 'Orbitron', monospace;
+  }
+  
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-md border border-white/10;
+  }
+  
+  .space-gradient {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+  
+  .nasa-gradient {
+    background: linear-gradient(135deg, #0B3D91 0%, #E31E24 100%);
+  }
+  
+  .cosmic-gradient {
+    background: linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%);
+  }
+  
+  .stellar-gradient {
+    background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  }
+  
+  /* Enhanced scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-space-black;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-nasa-blue/50 rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-nasa-blue/70;
+  }
+  
+  /* Text selection */
+  ::selection {
+    @apply bg-nasa-blue/30 text-white;
+  }
+  
+  /* Focus styles */
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-nasa-blue/50 focus:ring-offset-2 focus:ring-offset-space-black;
+  }
+  
+  /* Line clamp utilities */
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  /* Enhanced button styles */
+  .btn-primary {
+    @apply px-6 py-3 bg-gradient-to-r from-nasa-blue to-nasa-red hover:from-nasa-blue/90 hover:to-nasa-red/90 text-white rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 active:scale-95 focus-ring;
+  }
+  
+  .btn-secondary {
+    @apply px-6 py-3 bg-white/10 hover:bg-white/20 text-white rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 active:scale-95 focus-ring border border-white/20;
+  }
+  
+  /* Card hover effects */
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-2xl hover:shadow-nasa-blue/25 hover:-translate-y-2;
+  }
+  
+  /* Gradient text utilities */
+  .text-gradient-primary {
+    @apply bg-gradient-to-r from-stellar-yellow via-nasa-red to-cosmic-purple bg-clip-text text-transparent;
+  }
+  
+  .text-gradient-secondary {
+    @apply bg-gradient-to-r from-nasa-blue to-nasa-red bg-clip-text text-transparent;
+  }
+  
+  /* Animated background */
+  .animated-bg {
+    background: linear-gradient(-45deg, #0B3D91, #E31E24, #8B5CF6, #FFD700);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+  }
+  
+  @keyframes gradientShift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  /* Floating animation */
+  .float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+  
+  /* Pulse animation */
+  .pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  /* Shimmer effect */
+  .shimmer {
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+  }
+  
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+  
+  /* Glow effects */
+  .glow-blue {
+    box-shadow: 0 0 20px rgba(11, 61, 145, 0.5);
+  }
+  
+  .glow-red {
+    box-shadow: 0 0 20px rgba(227, 30, 36, 0.5);
+  }
+  
+  .glow-yellow {
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+  }
+  
+  /* Responsive text utilities */
+  .text-responsive-xl {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+  }
+  
+  .text-responsive-lg {
+    @apply text-2xl md:text-3xl lg:text-4xl;
+  }
+  
+  .text-responsive-md {
+    @apply text-lg md:text-xl lg:text-2xl;
+  }
+  
+  /* Grid utilities */
+  .grid-auto-fit {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  
+  .grid-auto-fill {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+  
+  /* Aspect ratio utilities */
+  .aspect-square {
+    aspect-ratio: 1 / 1;
+  }
+  
+  .aspect-video {
+    aspect-ratio: 16 / 9;
+  }
+  
+  .aspect-photo {
+    aspect-ratio: 4 / 3;
+  }
+  
+  /* Loading skeleton */
+  .skeleton {
+    @apply bg-white/10 animate-pulse rounded;
+  }
+  
+  /* Custom scrollbar for specific elements */
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(11, 61, 145, 0.5) transparent;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-nasa-blue/50 rounded-full;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    @apply bg-nasa-blue/70;
+  }
+}
+
+@layer utilities {
+  /* Space theme colors */
+  .bg-space-black {
+    background-color: #0a0a0a;
+  }
+  
+  .text-space-black {
+    color: #0a0a0a;
+  }
+  
+  .border-space-black {
+    border-color: #0a0a0a;
+  }
+  
+  /* NASA colors */
+  .bg-nasa-blue {
+    background-color: #0B3D91;
+  }
+  
+  .text-nasa-blue {
+    color: #0B3D91;
+  }
+  
+  .border-nasa-blue {
+    border-color: #0B3D91;
+  }
+  
+  .bg-nasa-red {
+    background-color: #E31E24;
+  }
+  
+  .text-nasa-red {
+    color: #E31E24;
+  }
+  
+  .border-nasa-red {
+    border-color: #E31E24;
+  }
+  
+  /* Stellar colors */
+  .bg-stellar-yellow {
+    background-color: #FFD700;
+  }
+  
+  .text-stellar-yellow {
+    color: #FFD700;
+  }
+  
+  .border-stellar-yellow {
+    border-color: #FFD700;
+  }
+  
+  /* Cosmic colors */
+  .bg-cosmic-purple {
+    background-color: #8B5CF6;
+  }
+  
+  .text-cosmic-purple {
+    color: #8B5CF6;
+  }
+  
+  .border-cosmic-purple {
+    border-color: #8B5CF6;
+  }
+  
+  /* Enhanced spacing */
+  .space-y-18 > * + * {
+    margin-top: 4.5rem;
+  }
+  
+  .space-x-18 > * + * {
+    margin-left: 4.5rem;
+  }
+  
+  /* Enhanced shadows */
+  .shadow-nasa-blue {
+    box-shadow: 0 10px 25px -5px rgba(11, 61, 145, 0.3);
+  }
+  
+  .shadow-nasa-red {
+    box-shadow: 0 10px 25px -5px rgba(227, 30, 36, 0.3);
+  }
+  
+  .shadow-stellar-yellow {
+    box-shadow: 0 10px 25px -5px rgba(255, 215, 0, 0.3);
+  }
+  
+  /* Backdrop blur utilities */
+  .backdrop-blur-xs {
+    backdrop-filter: blur(2px);
+  }
+  
+  .backdrop-blur-sm {
+    backdrop-filter: blur(4px);
+  }
+  
+  .backdrop-blur-md {
+    backdrop-filter: blur(8px);
+  }
+  
+  .backdrop-blur-lg {
+    backdrop-filter: blur(16px);
+  }
+  
+  .backdrop-blur-xl {
+    backdrop-filter: blur(24px);
+  }
+  
+  .backdrop-blur-2xl {
+    backdrop-filter: blur(40px);
+  }
+  
+  .backdrop-blur-3xl {
+    backdrop-filter: blur(64px);
+  }
+}
