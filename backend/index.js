@@ -14,6 +14,27 @@ const NASA_API_KEY = process.env.NASA_API_KEY || 'DEMO_KEY'; // Use DEMO_KEY for
 app.use(cors());
 app.use(express.json());
 
+// Root endpoint - API information
+app.get('/', (req, res) => {
+  res.json({
+    message: '🚀 NASA Explorer Backend API',
+    version: '1.0.0',
+    description: 'A backend service that provides access to NASA APIs',
+    endpoints: {
+      apod: '/api/apod - Astronomy Picture of the Day',
+      marsRover: '/api/mars-rover - Mars Rover Photos',
+      epic: '/api/epic - Earth Polychromatic Imaging Camera',
+      neo: '/api/neo - Near Earth Objects',
+      search: '/api/search - NASA Image and Video Library',
+      marsRovers: '/api/mars-rovers - Available Mars Rovers',
+      roverManifest: '/api/rover-manifest/:rover - Rover Manifest',
+      health: '/api/health - Health Check'
+    },
+    documentation: 'This API serves as a proxy to NASA\'s public APIs',
+    status: 'running'
+  });
+});
+
 // Helper function to make NASA API requests
 const makeNASARequest = async (endpoint, params = {}) => {
   try {
