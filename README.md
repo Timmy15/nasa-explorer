@@ -3,12 +3,14 @@
 A modern web application that showcases space-related data from NASA's Open APIs. Built with React frontend and Node.js backend, featuring beautiful data visualization and interactive user experience.
 
 ![NASA Explorer](https://img.shields.io/badge/NASA-Explorer-blue?style=for-the-badge&logo=nasa)
-![React](https://img.shields.io/badge/React-19.1.0-blue?style=for-the-badge&logo=react)
+![React](https://img.shields.io/badge/React-18.3.1-blue?style=for-the-badge&logo=react)
 ![Node.js](https://img.shields.io/badge/Node.js-Express-green?style=for-the-badge&logo=node.js)
 
 ## 🌐 Live Application
 
-**🚀 Deployed Application:** [NASA Explorer Live](https://nasa-explorer-app.vercel.app)
+**🚀 Frontend (Vercel):** [NASA Explorer Live](https://nasa-explorer-80j061wul-timmys-projects-ddacdedf.vercel.app/)
+
+**🔧 Backend (Render):** [NASA Explorer API](https://nasa-explorer-backend-1yjr.onrender.com)
 
 **📂 GitHub Repository:** [NASA Explorer Source Code](https://github.com/Timmy15/nasa-explorer)
 
@@ -27,8 +29,8 @@ A modern web application that showcases space-related data from NASA's Open APIs
 ## 🛠️ Tech Stack
 
 ### Frontend
-- **React 19.1.0** - Modern React with hooks and functional components
-- **React Router DOM 7.0.0** - Client-side routing
+- **React 18.3.1** - Modern React with hooks and functional components
+- **React Router DOM 6.20.1** - Client-side routing
 - **Tailwind CSS 3.3.0** - Utility-first CSS framework
 - **Framer Motion 10.16.4** - Smooth animations and transitions
 - **React Query 3.39.3** - Data fetching and caching
@@ -67,12 +69,15 @@ nasa-explorer/
 │   │   ├── App.js          # Main App component
 │   │   └── index.js        # Entry point
 │   ├── package.json
+│   ├── vercel.json         # Vercel deployment configuration
+│   ├── .npmrc              # npm configuration for legacy peer deps
 │   ├── tailwind.config.js  # Tailwind CSS configuration
 │   └── postcss.config.js   # PostCSS configuration
 ├── backend/                 # Node.js backend server
 │   ├── index.js            # Express server and API routes
 │   ├── package.json
 │   └── .env                # Environment variables (not in repo)
+├── deploy.sh               # Deployment script
 └── README.md               # This file
 ```
 
@@ -99,7 +104,7 @@ nasa-explorer/
 3. **Install frontend dependencies**
    ```bash
    cd ../frontend
-   npm install
+   npm install --legacy-peer-deps
    ```
 
 4. **Set up environment variables (optional)**
@@ -156,6 +161,7 @@ npm run build
 
 The backend provides the following endpoints that proxy to NASA's APIs:
 
+- `GET /` - API information and available endpoints
 - `GET /api/apod` - Astronomy Picture of the Day
 - `GET /api/mars-rover` - Mars Rover photos
 - `GET /api/mars-rovers` - Available Mars rovers
@@ -185,22 +191,46 @@ The app uses Tailwind CSS with custom NASA-themed colors defined in `tailwind.co
 
 ### Frontend Deployment (Vercel)
 1. Connect your GitHub repository to Vercel
-2. Set build command: `npm run build`
-3. Set output directory: `build`
-4. Add environment variable: `REACT_APP_API_URL=your_backend_url`
+2. Set framework preset to **"Create React App"**
+3. Set root directory to `frontend`
+4. Add environment variable: `REACT_APP_API_URL=https://nasa-explorer-backend-1yjr.onrender.com/api`
+5. Deploy!
 
-### Backend Deployment (Render/Heroku)
-1. Deploy the backend directory
-2. Set environment variables:
-   - `NASA_API_KEY`
-   - `PORT`
-3. Update frontend API URL to point to deployed backend
+**Configuration Files:**
+- `frontend/vercel.json` - Vercel deployment configuration
+- `frontend/.npmrc` - npm configuration for dependency resolution
+
+### Backend Deployment (Render)
+1. Connect your GitHub repository to Render
+2. Set build command: `npm install`
+3. Set start command: `npm start`
+4. Add environment variables:
+   - `NASA_API_KEY` (optional, will use DEMO_KEY if not set)
+   - `PORT` (Render will set this automatically)
+5. Deploy!
+
+## 🔧 Recent Updates & Fixes
+
+### Version Compatibility Fixes
+- **React 18.3.1**: Downgraded from React 19.1.0 for better compatibility with Framer Motion
+- **React Router DOM 6.20.1**: Updated for stability and compatibility
+- **Dependency Resolution**: Added `.npmrc` with `legacy-peer-deps=true` for smooth installation
+
+### Deployment Improvements
+- **Vercel Configuration**: Added `frontend/vercel.json` for proper deployment settings
+- **Backend Root Route**: Added informative root endpoint (`/`) for better API documentation
+- **Monorepo Structure**: Properly configured for separate frontend/backend deployment
+
+### Performance & UX Enhancements
+- **Loading States**: Added loading spinners and error handling across all pages
+- **Responsive Design**: Optimized for all device sizes
+- **Smooth Animations**: Enhanced with Framer Motion for better user experience
 
 ## 🤝 Contributing
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
@@ -210,20 +240,20 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Acknowledgments
 
-- [NASA Open APIs](https://api.nasa.gov/) for providing the amazing space data
-- [React](https://reactjs.org/) for the amazing frontend framework
-- [Express.js](https://expressjs.com/) for the backend framework
-- [Tailwind CSS](https://tailwindcss.com/) for the beautiful styling
-- [Framer Motion](https://www.framer.com/motion/) for smooth animations
+- **NASA** for providing amazing APIs and space data
+- **React Team** for the incredible framework
+- **Vercel** for seamless frontend deployment
+- **Render** for reliable backend hosting
+- **Tailwind CSS** for the utility-first CSS framework
+- **Framer Motion** for smooth animations
 
 ## 📞 Support
 
 If you encounter any issues or have questions:
 1. Check the [Issues](https://github.com/Timmy15/nasa-explorer/issues) page
 2. Create a new issue with detailed information
+3. Contact the maintainers
 
-## 🔗 Links
+---
 
-- **Live Application:** [https://nasa-explorer-app.vercel.app](https://nasa-explorer-app.vercel.app)
-- **GitHub Repository:** [https://github.com/Timmy15/nasa-explorer](https://github.com/Timmy15/nasa-explorer)
-- **NASA APIs:** [https://api.nasa.gov/](https://api.nasa.gov/) 
+**Made with ❤️ and 🚀 by the NASA Explorer Team** 
